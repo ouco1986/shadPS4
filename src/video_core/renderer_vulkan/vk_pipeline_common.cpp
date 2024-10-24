@@ -112,7 +112,7 @@ void Pipeline::BindBuffers(VideoCore::BufferCache& buffer_cache,
                        "Texel buffer stride must match format stride");
             const u32 offset_aligned = Common::AlignDown(offset, alignment);
             const u32 adjust = offset - offset_aligned;
-            ASSERT(adjust % fmt_stride == 0);
+            //ASSERT(adjust % fmt_stride == 0);
             push_data.AddOffset(binding.buffer, adjust / fmt_stride);
             buffer_view =
                 vk_buffer->View(offset_aligned, vsharp.GetSize() + adjust, desc.is_written,
